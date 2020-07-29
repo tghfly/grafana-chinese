@@ -32,6 +32,10 @@ systemctl start grafana-server
 重要说明: 各插件面板待汉化!!!
 
 有关Grafana视频教程，可关注我的b站账号 itcooking
+https://www.bilibili.com/video/BV15a4y1a75c
+
+https://www.bilibili.com/video/BV1PV411k7Rz
+
 https://www.bilibili.com/read/cv5926605
 
 汉化效果图
