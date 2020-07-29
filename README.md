@@ -16,13 +16,13 @@ cp /usr/sbin/grafana-cli /usr/sbin/grafana-cli.source
 
 systemctl stop grafana-server
 
-/bin/cp grafana/bin/linux-amd64/grafana-server /usr/sbin/
+/bin/cp -rp grafana/bin/linux-amd64/grafana-server /usr/sbin/
 
-/bin/cp grafana/bin/linux-amd64/grafana-cli /usr/sbin/
+/bin/cp -rp grafana/bin/linux-amd64/grafana-cli /usr/sbin/
 
 4、拷贝grafana/public 到 /usr/share/grafana/
 
-/bin/cp public /usr/share/grafana/
+/bin/cp -rp public /usr/share/grafana/
 
 5、启动grafana-server
 
