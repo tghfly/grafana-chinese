@@ -1,0 +1,79 @@
+<page-header model="ctrl.navModel"></page-header>
+
+<div class="page-container page-body">
+
+  <h3 class="page-sub-heading" ng-hide="ctrl.isNew">编辑消息通道</h3>
+  <h3 class="page-sub-heading" ng-show="ctrl.isNew">新的消息通道</h3>
+
+  <form name="ctrl.theForm" ng-if="ctrl.notifiers">
+    <div class="gf-form-group">
+      <div class="gf-form">
+        <span class="gf-form-label width-12">名称</span>
+        <input type="text" required class="gf-form-input max-width-15" ng-model="ctrl.model.name" required></input>
+      </div>
+      <div class="gf-form">
+        <span class="gf-form-label width-12">类型</span>
+        <div class="gf-form-select-wrapper width-15">
+          <select class="gf-form-input" ng-model="ctrl.model.type" ng-options="t.type as t.name for t in ctrl.notifiers" ng-change="ctrl.typeChanged(notification, $index)">
+          </select>
+        </div>
+      </div>
+      <gf-form-switch
+          class="gf-form"
+          label="默认 (发送所有告警)"
+          label-class="width-14"
+          checked="ctrl.model.isDefault"
+          tooltip="对所有告警使用此通知">
+      </gf-form-switch>
+      <gf-form-switch
+          class="gf-form"
+          label="包括图片"
+          label-class="width-14"
+          checked="ctrl.model.settings.uploadImage"
+          tooltip="捕获图像并将其包含在通知中">
+      </gf-form-switch>
+      <gf-form-switch
+          class="gf-form"
+          label="关闭恢复通知"
+          label-class="width-14"
+          checked="ctrl.model.disableResolveMessage"
+          tooltip="禁用告警恢复通知">
+      </gf-form-switch>
+      <gf-form-switch
+          class="gf-form"
+          label="开启发送告警间隔"
+          label-class="width-14"
+          checked="ctrl.model.sendReminder"
+          tooltip="默认关闭,即使某个告警发生后持续很长时间未恢复也仅发送一次通知">
+      </gf-form-switch>
+      <div class="gf-form-inline">
+        <div class="gf-form" ng-if="ctrl.model.sendReminder">
+          <span class="gf-form-label width-12">发送告警间隔
+            <info-popover mode="right-normal" position="top center">
+              指定发送频率,可以是 30s, 1m, 10m, 30m 或者 1h 等.
+            </info-popover>
+          </span>
+          <input type="text" placeholder="选择或自定义" class="gf-form-input width-15" ng-model="ctrl.model.frequency"
+            bs-typeahead="ctrl.getFrequencySuggestion" data-min-length=0 ng-required="ctrl.model.sendReminder">
+        </div>
+      </div>
+      <div class="gf-form">
+          <span class="alert alert-info width-30" ng-if="ctrl.model.sendReminder">
+            在评估规则后发送告警提醒。因此，发送提醒的频率不能超过配置的警报规则评估间隔. 
+          </span>
+        </div>
+    </div>
+
+    <div class="gf-form-group" ng-include src="ctrl.notifierTemplateId">
+    </div>
+
+    <div class="gf-form-group gf-form-button-row">
+			<button type="submit" ng-click="ctrl.save()" class="btn btn-primary width-7">保存</button>
+			<button type="submit" ng-click="ctrl.testNotification()" class="btn btn-secondary">发送测试</button>
+			<button type="delete" ng-if="!ctrl.isNew" ng-click="ctrl.deleteNotification()" class="btn btn-danger width-7">测试</button>
+			<a href="alerting/notifications" class="btn btn-inverse">Back</a>
+    </div>
+  </form>
+</div>
+
+<footer />
