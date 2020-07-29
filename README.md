@@ -30,3 +30,17 @@ systemctl start grafana-server
 
 
 重要说明: 各插件面板待汉化!!!
+
+汉化效果图
+
+![Image text](https://raw.githubusercontent.com/tghfly/grafana/master/chinese-images/login.png)
+
+![Image text](https://raw.githubusercontent.com/tghfly/grafana/master/chinese-images/config.png)
+
+![Image text](https://raw.githubusercontent.com/tghfly/grafana/master/chinese-images/profile.png)
+
+![Image text](https://raw.githubusercontent.com/tghfly/grafana/master/chinese-images/changepass.png)
+
+![Image text](https://raw.githubusercontent.com/tghfly/grafana/master/chinese-images/sideconfig.png)
+
+![Image text](https://raw.githubusercontent.com/tghfly/grafana/master/chinese-images/panel01.png)
