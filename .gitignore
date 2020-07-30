@@ -6,9 +6,9 @@ coverage/
 awsconfig
 /.awcache
 /dist
-/public/build
-/public/views/index.html
-/public/views/error.html
+# /public/build
+# /public/views/index.html
+# /public/views/error.html
 /emails/dist
 /reports
 .yarnrc
@@ -30,7 +30,7 @@ docs/GITCOMMIT
 docs/changed-files
 
 # locally required config files
-public/css/*.min.css
+# public/css/*.min.css
 
 # Editor junk
 *.sublime-workspace
@@ -43,7 +43,7 @@ public/css/*.min.css
 .vs/
 
 /data/*
-/bin/*
+# /bin/*
 
 # devenv
 /devenv/docker-compose.yaml
@@ -103,6 +103,6 @@ compilation-stats.json
 /packages/grafana-e2e/cypress/screenshots
 /packages/grafana-e2e/cypress/videos
 /packages/grafana-e2e/cypress/logs
-/public/e2e-test/screenShots/theOutput
-/public/e2e-tests/screenShots/theOutput/*.png
-/public/e2e-tests/videos
+# /public/e2e-test/screenShots/theOutput
+# /public/e2e-tests/screenShots/theOutput/*.png
+# /public/e2e-tests/videos
